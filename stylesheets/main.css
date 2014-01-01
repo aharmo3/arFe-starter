@@ -1,0 +1,8 @@
+/* line 1, /Users/joris/Desktop/projects/blog/grunt-starter/stylesheets/main.scss */
+.some-paragraph {
+  color: #333333;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  margin-top: 2em;
+  text-align: center;
+  text-transform: uppercase; }
