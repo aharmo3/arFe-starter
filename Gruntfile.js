@@ -110,7 +110,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('dev', ['sass:dev', 'connect', 'watch']);
-  grunt.registerTask('dist', [
+  grunt.registerTask('build', [
     'sass:dist',
     'imagemin:dist',
     'copy:dist',
