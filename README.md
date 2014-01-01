@@ -26,6 +26,7 @@ Clone this repo and run `npm install`.
 This project comes with two tasks:
 
 `dev` which starts a livereload server and watches your files.
+
 `build` produces a deployment-ready version of your website in `dist/`.
 
 ## License
