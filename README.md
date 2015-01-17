@@ -1,8 +1,6 @@
-# Starter Grunt template.
+# Intl FE starter template
+## Based off https://github.com/cabaret/grunt-starter
 
-Blog post at:
-
-[http://jorisooms.be/gruntjs-automate-all-the-things/](http://jorisooms.be/gruntjs-automate-all-the-things/)
 
 Includes:
 
