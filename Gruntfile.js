@@ -19,6 +19,12 @@ module.exports = function(grunt) {
           spawn: false,
           livereload: true
         }
+      },
+      html: {
+          files: ['index.html','**/*.css'],
+          options: {
+              livereload:true
+          }
       }
     },
     sass: {
@@ -33,7 +39,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/stylesheets/main.css': 'stylesheets/main.scss'
+          'stylesheets/main.css': 'stylesheets/main.scss'
         },
         options: {
           outputStyle: 'compressed'
