@@ -1,4 +1,3 @@
-
 // ---
 // Mixins
 // ---
@@ -7,9 +6,9 @@
 
 // Good button
 @mixin button($background, $font-color: $light-text) {
-	@extend .btn;
-	background-color: $background;
-	color: $font-color;
+    @extend .btn;
+    background-color: $background;
+    color: $font-color;
 }
 
 // Bad button
@@ -18,5 +17,79 @@
 // 	background-color: $background;
 // 	color: $font-color;
 // 	padding: $base $h4; => This should be in an extend, correct me if I'm wrong!
-// 	text-decoration: none;	
+// 	text-decoration: none;
 // }
+
+@mixin breakpoint($point) {
+    @else if $point == "screen-xs" {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+    @else if $point == "screen-sm" {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+    @else if $point == "screen-lg" {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+
+    @if $point == "screen-xl" {
+        @media (min-width:1200px) {
+            @content;
+        }
+    }
+}
+
+//  For Flex Box
+%flexBoxDisplay {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -o-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+//   VERTICAL ALIGNMENT
+%flexBoxItemAlign--center {
+    // TODO: verify that this is a valid property (CSSLint/caniuse say no, but it works...?)
+    align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    -moz-align-items: center;
+}
+
+//   HORZONTAL ALIGNMENT
+%flexBoxHozAlign--justify {
+    // TODO: verify that this is a valid property (CSSLint/caniuse say no, but it works...?)
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+}
+
+%flexBoxHozAlign--center {
+    // TODO: verify that this is a valid property (CSSLint/caniuse say no, but it works...?)
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -ms-flex-pack: center;
+}
+
+@mixin flexBox($ItemHozAlign: justify) {
+    @extend %flexBoxDisplay;
+    @extend %flexBoxItemAlign--center;
+
+    @if $ItemHozAlign == "justify" {
+        @extend %flexBoxHozAlign--justify;
+    }
+
+    @if $ItemHozAlign == "center" {
+        @extend %flexBoxHozAlign--center;
+    }
+}
